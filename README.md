@@ -23,8 +23,8 @@ Thank you.
 
 ### Creating a new Building Object:
 
-Basically, you need a *Building Object* that contains all the information (such as the size of the grid, or the Plot BasePart),
-to create a Building Object, use the **.new(base : BasePart, gridSize : number)** 
+Basically, you need a *Building Object* that contains all the information (such as the size of the grid, or the Plot BasePart),  
+to create a Building Object, use the ```.new(base : BasePart, gridSize : number)``` method
 
 **Example:**
 
@@ -43,7 +43,7 @@ local buildingObject = BuildingModule.new(game.Workspace.Plots.MrFearTick_PLOT, 
 ### Setting up the Structures:
 
 You got to set up a *DataTable* where you can access the Structures (Which are Models that you can place) to properly use this Module.
-
+	
 First, Enter the *"Structures"* Module. You should see the *"Models"* dictionary:
 
 ```lua
@@ -92,3 +92,9 @@ Structures.Models = {
 Simple as that, you can now proceed and use these Structures on **Edit Mode**.
 
 #
+
+### Editing on your Plot:
+
+This is where you actually start moving and placing *Structures*.
+	
+To start **Editing** a *Structure*, you must use the  ```:Edit(modelName : string)``` method.
