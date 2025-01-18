@@ -6,13 +6,13 @@
   - [x] Set up the States
   - [x] Create Model
   - [x] Move Model
-  - [ ] Automatic Pivot Alignment
+  - [x] Automatic Pivot Alignment
   - [ ] Remove Model
   - [ ] Parallel and Optimization
-  - [ ] Sanity Checks
+  - [x] Sanity Checks
  
 * Server
   - [x] Recieve Events
   - [x] Replicate Object
   - [ ] Parallel and Optimization
-  - [ ] Sanity Checks
+  - [x] Sanity Checks
