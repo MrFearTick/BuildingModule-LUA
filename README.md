@@ -5,7 +5,8 @@ Its been a while since i've touched roblox studio, its good to be back.
 This new Version includes...
 tons of new performance improvements, algorithms and methods.
 	
-the new version, and all the code inside is written by myself without any kind of addition from other developers, including the Algorithms,   
+the new version, and all the code inside is written by myself without any kind of addition from other developers, including the Algorithms,
+
 thus the code might be not perfect, but its way better compared to the version before :)
 	
 ### *Please don't use without giving credit to [@MrFearTick]*
