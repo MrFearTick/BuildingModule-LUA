@@ -38,6 +38,33 @@ local buildingObject = BuildingModule.new(game.Workspace.Plots.MrFearTick_PLOT, 
 > [!IMPORTANT]
 > Keep in mind that the default *gridSize* is **5**, so when the *gridSize* is not given, it will use **5** as the Grid Size.
 
+### About Plot:
+
+The Plot can be any BasePart with any Size. The Module will handle the rest.  
+Even wierd floating point value positions will be automatically calculated to fit the Structure to the grid.
+
+How the Module achieves this is pretty simple, here is a demonstration.
+
+First, we will use the Middle of the Plot to countinue on our calculations.  
+After we get the Middle, we need to find the grid's positions, and we won't do this by creating a gazillion useless parts and getting their positions, no.  
+We will use a simple Algorithm like this:
+
+```lua
+local GRID_SIZE : number
+local BASE : BasePart
+
+function Snap(mouseHit : Vector3)
+	local distanceXOrigin, distanceYOrigin = BASE.Position.X, BASE.Position.Z
+	local distanceX, distanceY = (distanceXOrigin - mouseHit.X), (distanceYOrigin - mouseHit.Z)
+	local offset = Vector3.new(distanceXOrigin + GRID_SIZE / 2, 0, distanceYOrigin + GRID_SIZE / 2)
+	local function snapPos(posNum : number) return math.round((posNum + GRID_SIZE / 2) / GRID_SIZE) * GRID_SIZE end
+
+	return Vector3.new(-snapPos(distanceX) + offset.X, (BASE.Size.Y / 2) + currentModel:GetExtentsSize().Y / 2, -snapPos(distanceY) + offset.Z)
+end
+```
+
+So basically what this algorithm does is that it returns the snapping position of the Grid.
+
 #
 
 ### Setting up the Structures:
@@ -98,3 +125,14 @@ Simple as that, you can now proceed and use these Structures on **Edit Mode**.
 This is where you actually start moving and placing *Structures*.
 	
 To start **Editing** a *Structure*, you must use the  ```:Edit(modelName : string)``` method.
+
+**Example:**
+
+```lua
+local buildingObject = BuildingModule.new(game.Workspace.Plots.MrFearTick_PLOT, 5)
+
+buildingObject:Edit("Wall Block") -- This Name is from the Example Structure given above.
+```
+
+With this, you will be able to move your Object on our plot.
+
